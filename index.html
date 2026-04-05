@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>碎屑 - 个人博客</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- SVG 定义 -->
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1A1A1A" stroke-width="0.5" opacity="0.1"/>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- 导航栏 -->
+  <nav class="nav">
+    <div class="nav-geo-line nav-geo-line-1"></div>
+    <a href="#" class="nav-logo">碎屑</a>
+    <div class="nav-links">
+      <a href="#diary" class="nav-link">日记</a>
+      <a href="#photo" class="nav-link">摄影</a>
+      <a href="#notes" class="nav-link">笔记</a>
+      <a href="#quotes" class="nav-link">台词</a>
+    </div>
+    <div class="nav-geo-circle"></div>
+  </nav>
+
+  <!-- Hero 区域 -->
+  <section class="hero">
+    <!-- 背景网格 -->
+    <div class="hero-grid-bg"></div>
+    
+    <!-- 几何装饰 -->
+    <div class="geo-circle geo-circle-1"></div>
+    <div class="geo-circle geo-circle-2"></div>
+    <div class="geo-rect geo-rect-1"></div>
+    <div class="geo-rect geo-rect-2"></div>
+    
+    <!-- SVG 装饰线条 -->
+    <svg class="geo-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line x1="0" y1="20" x2="100" y2="80" class="geo-line geo-line-1"/>
+      <line x1="20" y1="0" x2="80" y2="100" class="geo-line geo-line-2"/>
+      <line x1="0" y1="60" x2="100" y2="40" class="geo-line geo-line-3"/>
+    </svg>
+    
+    <!-- 主标题 -->
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-title-line">碎</span>
+        <span class="hero-title-line">屑</span>
+      </h1>
+      <p class="hero-subtitle">生活的碎片，思想的痕迹</p>
+      
+      <!-- 竖排文字装饰 -->
+      <p class="hero-vertical-text">PROUN × CONSTRUCTIVISM</p>
+    </div>
+    
+    <!-- 几何形状叠加 -->
+    <div class="geo-triangle"></div>
+    <div class="geo-cross"></div>
+  </section>
+
+  <!-- 日记碎屑区域 -->
+  <section id="diary" class="section diary-section">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">日记碎屑</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="diary-grid">
+      <article class="diary-item" data-delay="0">
+        <time class="diary-date">2026.04.05</time>
+        <p class="diary-text">今天的阳光很好，窗外的树叶在风中摇曳。我突然想起去年夏天的某个下午，也是这样的天气。</p>
+        <div class="diary-geo-accent"></div>
+      </article>
+      
+      <article class="diary-item" data-delay="100">
+        <time class="diary-date">2026.04.03</time>
+        <p class="diary-text">学习量子力学的时候，脑子里突然冒出一个奇怪的想法：如果电子也有记忆，世界会怎样？</p>
+        <div class="diary-geo-accent"></div>
+      </article>
+      
+      <article class="diary-item" data-delay="200">
+        <time class="diary-date">2026.04.01</time>
+        <p class="diary-text">深夜读完了《银河系漫游指南》，那句「不要恐慌」似乎在耳边回响。</p>
+        <div class="diary-geo-accent"></div>
+      </article>
+      
+      <article class="diary-item" data-delay="300">
+        <time class="diary-date">2026.03.28</time>
+        <p class="diary-text">物理笔记整理到一半，发现自己陷入了对「观测」本质的哲学思考中。</p>
+        <div class="diary-geo-accent"></div>
+      </article>
+      
+      <article class="diary-item" data-delay="400">
+        <time class="diary-date">2026.03.25</time>
+        <p class="diary-text">拍了一张很满意的照片，是在回家的路上，夕阳把一切都染成了橙红色。</p>
+        <div class="diary-geo-accent"></div>
+      </article>
+      
+      <article class="diary-item" data-delay="500">
+        <time class="diary-date">2026.03.20</time>
+        <p class="diary-text">「重要的不是治愈，而是带着病痛活下去。」——加缪</p>
+        <div class="diary-geo-accent"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 摄影墙区域 -->
+  <section id="photo" class="section photo-section">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">摄影墙</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="photo-grid">
+      <div class="photo-item photo-item-1">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 100 100">
+            <rect x="10" y="30" width="80" height="50" fill="none" stroke="#C62828" stroke-width="2"/>
+            <circle cx="35" cy="50" r="10" fill="#C62828" opacity="0.5"/>
+            <path d="M 10 70 L 40 45 L 60 60 L 90 35 L 90 75 L 10 75 Z" fill="#1A1A1A" opacity="0.2"/>
+          </svg>
+        </div>
+        <span class="photo-label">城市角落</span>
+      </div>
+      
+      <div class="photo-item photo-item-2">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="35" fill="none" stroke="#FBC02D" stroke-width="2"/>
+            <line x1="20" y1="50" x2="80" y2="50" stroke="#FBC02D" stroke-width="1"/>
+            <line x1="50" y1="20" x2="50" y2="80" stroke="#FBC02D" stroke-width="1"/>
+          </svg>
+        </div>
+        <span class="photo-label">几何静物</span>
+      </div>
+      
+      <div class="photo-item photo-item-3">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 100 100">
+            <rect x="20" y="20" width="60" height="60" fill="none" stroke="#C62828" stroke-width="2" transform="rotate(15 50 50)"/>
+            <rect x="30" y="30" width="40" height="40" fill="#1A1A1A" opacity="0.3"/>
+          </svg>
+        </div>
+        <span class="photo-label">光影游戏</span>
+      </div>
+      
+      <div class="photo-item photo-item-4">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 100 100">
+            <path d="M 50 10 L 90 90 L 10 90 Z" fill="none" stroke="#C62828" stroke-width="2"/>
+            <circle cx="50" cy="60" r="15" fill="#FBC02D" opacity="0.5"/>
+          </svg>
+        </div>
+        <span class="photo-label">建筑线条</span>
+      </div>
+      
+      <div class="photo-item photo-item-5">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 100 100">
+            <ellipse cx="50" cy="50" rx="40" ry="25" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+            <ellipse cx="50" cy="50" rx="25" ry="40" fill="none" stroke="#C62828" stroke-width="1"/>
+          </svg>
+        </div>
+        <span class="photo-label">水面反射</span>
+      </div>
+      
+      <div class="photo-item photo-item-6">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 100 100">
+            <rect x="15" y="25" width="70" height="50" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+            <line x1="15" y1="50" x2="85" y2="50" stroke="#1A1A1A" stroke-width="1"/>
+            <line x1="50" y1="25" x2="50" y2="75" stroke="#1A1A1A" stroke-width="1"/>
+          </svg>
+        </div>
+        <span class="photo-label">窗</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 物理笔记区域 -->
+  <section id="notes" class="section notes-section">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">物理笔记</h2>
+      <div class="section-line"></div>
+    </div>
+    
+    <div class="notes-container">
+      <div class="note-item">
+        <div class="note-geo-decor note-geo-decor-1"></div>
+        <h3 class="note-title">量子力学基础</h3>
+        <div class="note-content">
+          <p class="note-equation">iℏ∂/∂t Ψ = Ĥ Ψ</p>
+          <p class="note-description">薛定谔方程描述了量子态随时间的演化。波函数 Ψ 包含了系统的全部信息。</p>
+        </div>
+      </div>
+      
+      <div class="note-item">
+        <div class="note-geo-decor note-geo-decor-2"></div>
+        <h3 class="note-title">相对论简介</h3>
+        <div class="note-content">
+          <p class="note-equation">E² = (pc)² + (mc²)²</p>
+          <p class="note-description">质能等价原理揭示了能量与质量的关系，是狭义相对论的核心公式。</p>
+        </div>
+      </div>
+      
+      <div class="note-item">
+        <div class="note-geo-decor note-geo-decor-3"></div>
+        <h3 class="note-title">电磁学</h3>
+        <div class="note-content">
+          <p class="note-equation">∇ · E = ρ/ε₀</p>
+          <p class="note-description">高斯定律描述了电场与电荷分布的关系，是麦克斯韦方程组的一部分。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 台词收藏区域 -->
+  <section id="quotes" class="section quotes-section">
+    <div class="section-header section-header-light">
+      <span class="section-number">04</span>
+      <h2 class="section-title section-title-light">台词收藏</h2>
+      <div class="section-line section-line-light"></div>
+    </div>
+    
+    <div class="quotes-container">
+      <blockquote class="quote-item quote-item-main">
+        <div class="quote-geo-bg"></div>
+        <p class="quote-text">「不要让自己被驯服，如果你驯服了，就会渴望有一天离开。」</p>
+        <cite class="quote-source">——《星际牛仔》Spike Spiegel</cite>
+      </blockquote>
+      
+      <div class="quotes-grid">
+        <blockquote class="quote-item">
+          <p class="quote-text">「所有生命都会消逝，没有人能逃过。」</p>
+          <cite class="quote-source">——《银魂》坂田银时</cite>
+        </blockquote>
+        
+        <blockquote class="quote-item">
+          <p class="quote-text">「如果你能看到未来，那未来还是未来吗？」</p>
+          <cite class="quote-source">——《黑礁》达ri</cite>
+        </blockquote>
+        
+        <blockquote class="quote-item">
+          <p class="quote-text">「世界上有什么不会失去的东西吗？我相信有，你也最好相信。」</p>
+          <cite class="quote-source">——《千年女优》</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-geo-line"></div>
+    <div class="footer-content">
+      <p class="footer-title">碎屑</p>
+      <p class="footer-subtitle">收集生活的零碎</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">About</a>
+        <span class="footer-divider">/</span>
+        <a href="#" class="footer-link">Archive</a>
+        <span class="footer-divider">/</span>
+        <a href="#" class="footer-link">RSS</a>
+      </div>
+      <p class="footer-copy">© 2026 Suixie. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
