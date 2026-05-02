@@ -292,4 +292,4 @@ $$|\theta, \phi\rangle = \bigotimes_{i=1}^N \left(\cos\frac{\theta}{2}|Z+\rangle
 
 ---
 
-*生成过程实用了AI*
+*生成过程使用了AI*
