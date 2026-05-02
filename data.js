@@ -63,6 +63,7 @@ const INITIAL_DATA = {
 
 const STORAGE_KEY = 'skadrate_blog_v1';
 const BSIDE_UNLOCK_KEY = 'skadrate_bside_unlocked';
+const DELETED_KEY = 'skadrate_deleted_ids';
 
 const SkadrateData = {
   load() {
@@ -74,11 +75,22 @@ const SkadrateData = {
       console.error('Failed to load data from localStorage', e);
     }
     const merged = JSON.parse(JSON.stringify(INITIAL_DATA));
+
+    // 读取已删除的 ID 记录
+    let deletedIds = {};
+    try {
+      deletedIds = JSON.parse(localStorage.getItem(DELETED_KEY) || '{}');
+    } catch (e) {}
+
     if (stored) {
       Object.keys(stored).forEach(key => {
         if (Array.isArray(merged[key]) && Array.isArray(stored[key])) {
           const storedMap = new Map(stored[key].map(i => [i.id, i]));
           merged[key].forEach(item => {
+            // 如果该 ID 已被用户删除，不再从 INITIAL_DATA 恢复
+            if (deletedIds[key] && deletedIds[key].includes(item.id)) {
+              return;
+            }
             if (storedMap.has(item.id)) {
               // 保留用户本地修改，同时补全新增字段（如 mdFile）
               storedMap.set(item.id, { ...item, ...storedMap.get(item.id) });
@@ -121,6 +133,15 @@ const SkadrateData = {
     if (idx === -1) return false;
     data[category].splice(idx, 1);
     this.save(data);
+
+    // 记录已删除的 ID，防止 INITIAL_DATA 重新加载时恢复
+    try {
+      let deleted = JSON.parse(localStorage.getItem(DELETED_KEY) || '{}');
+      if (!deleted[category]) deleted[category] = [];
+      if (!deleted[category].includes(id)) deleted[category].push(id);
+      localStorage.setItem(DELETED_KEY, JSON.stringify(deleted));
+    } catch (e) {}
+
     return true;
   },
 
