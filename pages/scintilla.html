@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCINTILLA // 碎屑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .archive-page { background: var(--paper); min-height: 100vh; padding: 6rem 3rem; }
+    .archive-nav { display:flex; align-items:center; gap:1.5rem; margin-bottom:4rem; }
+    .archive-nav-back { font-weight:700; border:2px solid var(--black); padding:0.4rem 1rem; transition: all .2s; }
+    .archive-nav-back:hover { background: var(--black); color: var(--yellow); }
+    .archive-nav-title { font-family:'Archivo Black',sans-serif; font-size:1.6rem; color:var(--red); letter-spacing:0.1em; }
+    .archive-sci-item { background: var(--white); padding:2rem; border-left:4px solid var(--red); margin-bottom:1.5rem; transition: transform .2s; }
+    .archive-sci-item:hover { transform: translateY(-4px); box-shadow:0 10px 30px rgba(0,0,0,.08); }
+    .archive-sci-item:nth-child(even) { border-left-color: var(--yellow); }
+    .archive-sci-date { font-size:.8rem; color:var(--gray); display:block; margin-bottom:.75rem; }
+    .archive-sci-text { font-size:1rem; line-height:1.8; color:var(--black); }
+    .archive-sci-tag { display:inline-block; margin-top:1rem; font-size:.75rem; color:var(--red); border:1px solid var(--red); padding:2px 8px; text-transform:uppercase; letter-spacing:.1em; }
+    .archive-empty { color:var(--gray); font-size:1.1rem; }
+  </style>
+</head>
+<body>
+  <div class="archive-page">
+    <nav class="archive-nav"></nav>
+    <div id="archive-content"></div>
+  </div>
+  <script src="../data.js"></script>
+  <script src="archive.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => ArchiveApp.init('scintilla'));</script>
+</body>
+</html>

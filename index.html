@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>碎屑 - 个人空间</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- marked.js for Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- MathJax for formulas -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMDJHQ7RFM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JMDJHQ7RFM');
+  </script>
+</head>
+<body>
+  <!-- SVG 定义 -->
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1A1A1A" stroke-width="0.5" opacity="0.1"/>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- 导航栏 -->
+  <nav class="nav">
+    <div class="nav-geo-line nav-geo-line-1"></div>
+    <a href="#" class="nav-logo">碎屑</a>
+    <div class="nav-links">
+      <a href="#scintilla" class="nav-link">▢</a>
+      <a href="#inland-empire" class="nav-link">◯</a>
+      <a href="#gravity-rainbow" class="nav-link">△</a>
+      <a href="#manifesto" class="nav-link">◇</a>
+    </div>
+    <div class="nav-geo-circle"></div>
+  </nav>
+
+  <!-- 首页视图 -->
+  <div id="view-home">
+    <!-- Hero 区域 -->
+    <section class="hero">
+      <div class="hero-grid-bg"></div>
+
+      <div class="geo-circle geo-circle-1"></div>
+      <div class="geo-circle geo-circle-2"></div>
+      <div class="geo-rect geo-rect-1"></div>
+      <div class="geo-rect geo-rect-2"></div>
+
+      <svg class="geo-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <line x1="0" y1="20" x2="100" y2="80" class="geo-line geo-line-1"/>
+        <line x1="20" y1="0" x2="80" y2="100" class="geo-line geo-line-2"/>
+        <line x1="0" y1="60" x2="100" y2="40" class="geo-line geo-line-3"/>
+      </svg>
+
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-title-line">碎</span>
+          <span class="hero-title-line">屑</span>
+        </h1>
+        <p class="hero-subtitle">欢迎来到我的网站（仍然在测试中！）</p>
+      </div>
+
+      <div class="geo-triangle"></div>
+      <div class="geo-cross"></div>
+    </section>
+
+    <!-- SCINTILLA -->
+    <section id="scintilla" class="section scintilla-section">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">SCINTILLA</h2>
+        <div class="section-line"></div>
+        <a class="geo-enter-btn" href="#/archive/scintilla" title="进入归档">
+          <span class="geo-enter-icon">→</span>
+        </a>
+      </div>
+      <div class="scintilla-grid" id="scintilla-grid">
+        <!-- JS 渲染 -->
+      </div>
+    </section>
+
+    <!-- 内陆帝国 -->
+    <section id="inland-empire" class="section inland-empire-section">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">内陆帝国</h2>
+        <div class="section-line"></div>
+        <a class="geo-enter-btn" href="#/archive/inland-empire" title="进入归档">
+          <span class="geo-enter-icon">→</span>
+        </a>
+      </div>
+      <div class="inland-empire-grid" id="inland-empire-grid">
+        <!-- JS 渲染 -->
+      </div>
+    </section>
+
+    <!-- 万有引力之虹 -->
+    <section id="gravity-rainbow" class="section gravity-rainbow-section">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">万有引力之虹</h2>
+        <div class="section-line"></div>
+        <a class="geo-enter-btn" href="#/archive/gravity-rainbow" title="进入归档">
+          <span class="geo-enter-icon">→</span>
+        </a>
+      </div>
+      <div class="gravity-rainbow-container" id="gravity-rainbow-container">
+        <!-- JS 渲染 -->
+      </div>
+    </section>
+
+    <!-- 宣言 / 原台词区（无标题，砸在深色几何背景上） -->
+    <section id="manifesto" class="section manifesto-section">
+      <div class="manifesto-bg-geo"></div>
+      <blockquote class="manifesto-quote">
+        <p id="manifesto-text"></p>
+      </blockquote>
+    </section>
+
+    <!-- B-side 隐秘入口 -->
+    <div class="bside-trigger" id="bside-trigger" title="?">
+      <div class="bside-shape"></div>
+    </div>
+
+    <!-- B-side 密码面板 -->
+    <div class="bside-modal" id="bside-modal">
+      <div class="bside-panel">
+        <button class="bside-close" id="bside-close">✕</button>
+        <div class="bside-hint">B-SIDE ACCESS</div>
+        <input type="password" class="bside-input" id="bside-input" maxlength="4" placeholder="####" inputmode="numeric">
+        <div class="bside-hint-small">Hint: 生日</div>
+        <button class="bside-submit" id="bside-submit">UNLOCK</button>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="footer-geo-line"></div>
+      <div class="footer-content">
+        <p class="footer-title">碎屑</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">关于</a>
+          <span class="footer-divider">/</span>
+          <a href="#" class="footer-link">归档</a>
+        </div>
+        <p class="footer-copy">© 2024 Suixie. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- 归档视图 -->
+  <div id="view-archive" style="display:none">
+    <div class="archive-page" id="archive-page-wrapper">
+      <nav class="archive-nav" id="archive-nav"></nav>
+      <div id="archive-content"></div>
+    </div>
+  </div>
+
+  <!-- 午夜电台 BGM 播放器 -->
+  <div class="bgm-player" id="bgm-player">
+    <audio id="bgm-audio" loop preload="auto" volume="0.25" autoplay>
+      <source src="05 Them Kitty Bones.mp3" type="audio/mpeg">
+    </audio>
+    <button class="bgm-toggle" id="bgm-toggle" aria-label="播放/暂停">
+      <span class="bgm-icon" id="bgm-icon">►</span>
+    </button>
+    <input type="range" class="bgm-volume" id="bgm-volume" min="0" max="1" step="0.05" value="0.25" aria-label="音量">
+    <span class="bgm-label">[ BGM: "Them Kitty Bones" - 喵基因(Meow Genetics) OST ]</span>
+  </div>
+
+  <!-- 管理员浮动按钮与 CMS 面板 -->
+  <div class="admin-fab" id="admin-fab">＋</div>
+  <div class="admin-modal" id="admin-modal">
+    <div class="admin-panel">
+      <button class="admin-close" id="admin-close">✕</button>
+      <h3 class="admin-title">CMS // DATA INJECTION</h3>
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="scintilla">SCINTILLA</button>
+        <button class="admin-tab" data-tab="inlandEmpire">内陆帝国</button>
+        <button class="admin-tab" data-tab="gravityRainbow">万有引力之虹</button>
+        <button class="admin-tab admin-tab-bside" data-tab="bSide">B-side</button>
+      </div>
+      <div class="admin-forms">
+        <div class="admin-form active" data-form="scintilla">
+          <input type="date" class="admin-input" id="cms-sci-date">
+          <textarea class="admin-textarea" id="cms-sci-content" placeholder="内容"></textarea>
+          <input type="text" class="admin-input" id="cms-sci-tag" placeholder="moodTag">
+          <button class="admin-submit" data-cat="scintilla">PUBLISH</button>
+        </div>
+        <div class="admin-form" data-form="inlandEmpire">
+          <input type="date" class="admin-input" id="cms-ie-date">
+          <input type="text" class="admin-input" id="cms-ie-src" placeholder="图片路径 (如 images/xxx.png)">
+          <input type="text" class="admin-input" id="cms-ie-alt" placeholder="alt 描述">
+          <select class="admin-select" id="cms-ie-category">
+            <option value="screenshot">screenshot</option>
+            <option value="meme">meme</option>
+            <option value="photo">photo</option>
+          </select>
+          <input type="text" class="admin-input" id="cms-ie-caption" placeholder="caption">
+          <button class="admin-submit" data-cat="inlandEmpire">PUBLISH</button>
+        </div>
+        <div class="admin-form" data-form="gravityRainbow">
+          <input type="date" class="admin-input" id="cms-gr-date">
+          <input type="text" class="admin-input" id="cms-gr-title" placeholder="标题">
+          <input type="text" class="admin-input" id="cms-gr-mdfile" placeholder="Markdown 文件路径 (如 notes.md)">
+          <input type="text" class="admin-input" id="cms-gr-tags" placeholder="标签, 用逗号分隔">
+          <button class="admin-submit" data-cat="gravityRainbow">PUBLISH</button>
+        </div>
+        <div class="admin-form" data-form="bSide">
+          <input type="date" class="admin-input" id="cms-bs-date">
+          <textarea class="admin-textarea" id="cms-bs-content" placeholder="私密情绪"></textarea>
+          <button class="admin-submit" data-cat="bSide">PUBLISH</button>
+        </div>
+      </div>
+      <div class="admin-list" id="admin-list"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

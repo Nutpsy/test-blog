@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>万有引力之虹 // 碎屑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Serif+SC:wght@400;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+      startup: { typeset: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js" async></script>
+  <style>
+    .archive-page { background: var(--paper); min-height: 100vh; padding: 6rem 3rem; }
+    .archive-nav { display:flex; align-items:center; gap:1.5rem; margin-bottom:4rem; }
+    .archive-nav-back { font-weight:700; border:2px solid var(--black); padding:0.4rem 1rem; transition: all .2s; }
+    .archive-nav-back:hover { background: var(--black); color: var(--yellow); }
+    .archive-nav-title { font-family:'Archivo Black',sans-serif; font-size:1.6rem; color:var(--red); letter-spacing:0.1em; }
+    .archive-gr-item { background: var(--white); padding: 2.5rem; border-top: 4px solid var(--black); margin-bottom: 2rem; transition: transform .3s, box-shadow .3s; }
+    .archive-gr-item:hover { transform: translateY(-6px); box-shadow: 0 15px 40px rgba(0,0,0,.12); }
+    .archive-gr-date { font-size:.8rem; color:var(--gray); display:block; margin-bottom:.5rem; }
+    .archive-gr-title { font-family:'ZCOOL XiaoWei','Noto Serif SC',serif; font-size:1.6rem; margin-bottom:1.2rem; }
+    .archive-gr-tags { display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1rem; }
+    .archive-gr-tag { font-size:.75rem; background: var(--paper); color: var(--black); padding: 2px 8px; border: 1px solid var(--black); }
+    .archive-gr-md { font-size: .95rem; line-height: 1.8; color: var(--gray); }
+    .archive-gr-md h1,.archive-gr-md h2,.archive-gr-md h3 { color: var(--black); margin: 1.2rem 0 .6rem; }
+    .archive-gr-md p { margin-bottom: .8rem; }
+    .archive-gr-md blockquote { border-left: 4px solid var(--red); padding-left: 1rem; margin: 1rem 0; color: var(--black); }
+    .archive-gr-md ul,.archive-gr-md ol { margin: .8rem 0 .8rem 1.5rem; }
+    .archive-gr-md code { background: rgba(26,26,26,.06); padding: 2px 6px; font-family: monospace; }
+    .archive-gr-md pre { background: var(--black); color: var(--white); padding: 1rem; overflow-x: auto; }
+    .archive-empty { color:var(--gray); font-size:1.1rem; }
+  </style>
+</head>
+<body>
+  <div class="archive-page">
+    <nav class="archive-nav"></nav>
+    <div id="archive-content"></div>
+  </div>
+  <script src="../data.js"></script>
+  <script src="archive.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => ArchiveApp.init('gravity-rainbow'));</script>
+</body>
+</html>
