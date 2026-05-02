@@ -62,7 +62,6 @@ const ArchiveApp = {
         <article class="archive-sci-item">
           <time class="archive-sci-date">${escapeHtml(it.date)}</time>
           <p class="archive-sci-text">${escapeHtml(it.content)}</p>
-          ${it.moodTag ? `<span class="archive-sci-tag">${escapeHtml(it.moodTag)}</span>` : ''}
         </article>
       `).join('');
     } else if (this.page === 'inland-empire') {

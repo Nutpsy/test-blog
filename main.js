@@ -160,7 +160,6 @@ const ArchiveApp = {
             ${g.items.map(it => `
               <article class="archive-sci-item" data-id="${it.id}">
                 <p class="archive-sci-text">${escapeHtml(it.content)}</p>
-                ${it.moodTag ? `<span class="archive-sci-tag">${escapeHtml(it.moodTag)}</span>` : ''}
               </article>
             `).join('')}
           </div>
@@ -384,7 +383,6 @@ const PostApp = {
         <article class="archive-sci-item" style="max-width:720px;margin:0 auto">
           <time class="archive-sci-date">${escapeHtml(item.date)}</time>
           <p class="archive-sci-text">${escapeHtml(item.content)}</p>
-          ${item.moodTag ? `<span class="archive-sci-tag">${escapeHtml(item.moodTag)}</span>` : ''}
         </article>
       `;
     } else if (category === 'inlandEmpire') {
@@ -578,7 +576,6 @@ function initHomeRendering() {
       <article class="scintilla-item" data-delay="${idx * 100}" style="animation-delay:${idx * 0.1}s" data-id="${it.id}">
         <time class="scintilla-date">${escapeHtml(it.date)}</time>
         <p class="scintilla-text">${escapeHtml(it.content)}</p>
-        ${it.moodTag ? `<span class="scintilla-tag">${escapeHtml(it.moodTag)}</span>` : ''}
         <div class="scintilla-geo-accent"></div>
       </article>
     `).join('');
@@ -763,8 +760,7 @@ function initAdmin() {
       if (cat === 'scintilla') {
         item = {
           date: document.getElementById('cms-sci-date').value.trim() || new Date().toISOString().slice(0,10).replace(/-/g,'.'),
-          content: document.getElementById('cms-sci-content').value.trim(),
-          moodTag: document.getElementById('cms-sci-tag').value.trim()
+          content: document.getElementById('cms-sci-content').value.trim()
         };
       } else if (cat === 'inlandEmpire') {
         item = {
