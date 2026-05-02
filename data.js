@@ -7,21 +7,9 @@ const INITIAL_DATA = {
   scintilla: [
     {
       id: "sci_1714560000000",
-      date: "2026.04.28",
-      content: "电梯里的陌生人同时打了个哈欠，像一场小型瘟疫。",
-      moodTag: "荒诞"
-    },
-    {
-      id: "sci_1714473600000",
-      date: "2026.04.27",
-      content: "凌晨四点，冰箱压缩机停转的瞬间，世界漏气了。",
-      moodTag: "孤独"
-    },
-    {
-      id: "sci_1714387200000",
-      date: "2026.04.26",
-      content: "所有未发送的草稿箱里都住着一个更诚实的自己。",
-      moodTag: "自省"
+      date: "2026.05.02",
+      content: "碎屑的第一条记录！",
+      moodTag: "TEST"
     }
   ],
 
@@ -32,7 +20,7 @@ const INITIAL_DATA = {
       src: "testpic1.png",
       alt: "Archive 001",
       category: "photo",
-      caption: "Archive 001"
+      caption: "#AdventureTime_S04E23"
     }
   ],
 
