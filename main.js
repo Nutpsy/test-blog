@@ -47,6 +47,14 @@ const Router = {
     } else {
       this.showHome();
     }
+
+    // SPA 路由变化后手动上报 Google Analytics page_view
+    if (typeof gtag === 'function') {
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    }
   },
 
 
