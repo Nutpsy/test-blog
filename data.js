@@ -10,7 +10,13 @@ const INITIAL_DATA = {
       date: "2026.05.02",
       content: "碎屑的第一条记录！",
       moodTag: "TEST"
-    }
+    },
+      {
+      id: "202508公众科学日",
+      date: "2026.05.08",
+      content: "好忙！",
+      moodTag: "TEST"
+    },
   ],
 
   inlandEmpire: [
