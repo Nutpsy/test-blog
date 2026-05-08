@@ -17,12 +17,6 @@ const INITIAL_DATA = {
       content: "好忙！",
       moodTag: "TEST"
     },
-      {
-      id: "test",
-      date: "2026.05.08",
-      content: "test！",
-      moodTag: "TEST"
-    },
   ],
 
   inlandEmpire: [
