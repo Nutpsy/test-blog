@@ -79,20 +79,28 @@ const SkadrateData = {
     if (stored) {
       Object.keys(stored).forEach(key => {
         if (Array.isArray(merged[key]) && Array.isArray(stored[key])) {
+          const mergedMap = new Map(merged[key].map(i => [i.id, i]));
           const storedMap = new Map(stored[key].map(i => [i.id, i]));
+
+          // 先处理 INITIAL_DATA 中的条目：保留用户修改，跳过已删除
           merged[key].forEach(item => {
-            // 如果该 ID 已被用户删除，不再从 INITIAL_DATA 恢复
             if (deletedIds[key] && deletedIds[key].includes(item.id)) {
+              mergedMap.delete(item.id);
               return;
             }
             if (storedMap.has(item.id)) {
-              // 保留用户本地修改，同时补全新增字段（如 mdFile）
               storedMap.set(item.id, { ...item, ...storedMap.get(item.id) });
-            } else {
-              storedMap.set(item.id, item);
             }
           });
-          merged[key] = Array.from(storedMap.values());
+
+          // 再把 stored 里独有的条目加进来
+          storedMap.forEach((item, id) => {
+            if (!mergedMap.has(id)) {
+              mergedMap.set(id, item);
+            }
+          });
+
+          merged[key] = Array.from(mergedMap.values());
         } else if (typeof merged[key] === 'object' && merged[key] !== null && !Array.isArray(merged[key])) {
           merged[key] = { ...merged[key], ...stored[key] };
         } else {
