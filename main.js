@@ -33,7 +33,7 @@ const Router = {
   },
 
   async handleHash() {
-    const hash = window.location.hash.replace('#/', '').replace('#', '');
+    const hash = decodeURIComponent(window.location.hash.replace('#/', '').replace('#', ''));
     const page = hash || 'home';
 
     if (page.startsWith('archive/')) {
