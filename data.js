@@ -18,7 +18,7 @@ const INITIAL_DATA = {
       moodTag: "TEST"
     },
       {
-      id: "202508公众科学日",
+      id: "test",
       date: "2026.05.08",
       content: "test！",
       moodTag: "TEST"
