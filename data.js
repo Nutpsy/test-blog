@@ -3,7 +3,7 @@
  * INITIAL_DATA 与 localStorage 深度合并
  */
 
-const DATA_VERSION = 'v4';
+const DATA_VERSION = 'v5';
 
 const INITIAL_DATA = {
   scintilla: [
