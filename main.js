@@ -366,7 +366,7 @@ const PostApp = {
     if (!container || typeof SkadrateData === 'undefined') return;
 
     const items = SkadrateData.getAll(this.catMap[category] || category);
-    const item = items.find(it => String(it.id) === String(id));
+    const item = items.find(it => it.id == id);
 
     if (!item) {
       container.innerHTML = '<p class="archive-empty">记录不存在</p>';
