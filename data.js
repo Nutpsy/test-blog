@@ -3,6 +3,8 @@
  * INITIAL_DATA 与 localStorage 深度合并
  */
 
+const DATA_VERSION = 'v4';
+
 const INITIAL_DATA = {
   scintilla: [
     {
@@ -61,6 +63,18 @@ const DELETED_KEY = 'skadrate_deleted_ids';
 
 const SkadrateData = {
   load() {
+    // 检查数据版本，如果版本不匹配就清除所有缓存，彻底重置
+    try {
+      const cachedVersion = localStorage.getItem('skadrate_data_version');
+      if (cachedVersion !== DATA_VERSION) {
+        console.log(`[SkadrateData] 版本变更 ${cachedVersion} -> ${DATA_VERSION}，清除旧缓存`);
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(DELETED_KEY);
+        localStorage.setItem('skadrate_data_version', DATA_VERSION);
+        return JSON.parse(JSON.stringify(INITIAL_DATA));
+      }
+    } catch (e) {}
+
     let stored = null;
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
